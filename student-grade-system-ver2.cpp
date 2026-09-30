@@ -58,18 +58,26 @@ string remarks(char grade){  // remarks
     }
 }
 
+void line () {
+    cout << "-------------------------" << endl;
+}
+
 int main(){
 
     // Student Grade Managment System Version 2
+
+    cout << "\n===================================" << endl;
+    cout << "  Student Grade System Version 2   " << endl;
+    cout << "===================================\n" << endl;
 
     int n;
     cout << "How many students are there? ";
     cin >> n;
 
     for (int i = 1; i <= n; i++){
-        cout << "\nRecord of " << i << " student:" << endl;
+        cout << "\nRecord of student " << i << ":" << endl;
         string name;
-        cout << "Enter " << i << " student name: ";
+        cout << "Enter student " << i << " name: ";
         cin >> name;
         
         int sub;
@@ -84,13 +92,15 @@ int main(){
         float percent = percentage(total, sub);
         char finalGrade = grade(percent);
 
+        line();
+
         cout << "\nResult of " << name << ":" << endl;
 
         cout << "\nTotal Marks: " << total; // total marks
         cout << "\nPercentage: " << percent << "%"; // percentage
         cout << "\nGrade: " << finalGrade; // grade
         cout << "\nRemarks: " << remarks(finalGrade) << endl; // remarks
-
+        line ();
     }
 
     return 0;
